@@ -5,6 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 // const html = marked.parse("# Marked in Node.js\n\nRendered by **marked**.");
 // property -> dangerouslySetInnerHTML={{ __html: html }
 
+marked.use({
+  breaks: true,
+});
+
 function App() {
   const dispatch = useDispatch();
   const editor = useSelector((state) => state.editor);

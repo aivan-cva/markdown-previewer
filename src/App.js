@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import { marked } from "marked";
 import { useSelector, useDispatch } from "react-redux";
+import { initialText } from "./store/editor";
 // const html = marked.parse("# Marked in Node.js\n\nRendered by **marked**.");
 // property -> dangerouslySetInnerHTML={{ __html: html }
 
@@ -18,11 +19,9 @@ function App() {
   };
   return (
     <div className="App">
-      <textarea
-        id="editor"
-        className="mkd-input"
-        onChange={onChange}
-      ></textarea>
+      <textarea id="editor" className="mkd-input" onChange={onChange}>
+        {initialText}
+      </textarea>
       <div
         id="preview"
         className="mkd-output"
